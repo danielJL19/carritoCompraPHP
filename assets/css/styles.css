@@ -1,0 +1,28 @@
+/*GENERALES*/
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.body{
+    background: url(../img/bg.png);
+}
+#logo{
+    padding: 30px;
+}
+
+#logo img{
+    height:100px;
+}
+.product img{
+    width: 100px;
+}
+.bg-dark{
+    background-color: black !important;
+}
+.navbar-dark{
+    color: aliceblue;
+}
+.opciones{
+    flex-direction:column !important;
+    text-align: center;
+}
