@@ -9,4 +9,11 @@ class Utils{
         }
         return $name;
     }
+
+    public static function isAdmin(){
+        if(!isset($_SESSION['rol'])){//SI NO HAY DATOS DENTRO DE SESSION, DEVOLVERLO 
+            //AL HOME
+            header("Location:".base_url);
+        }
+    }
 }

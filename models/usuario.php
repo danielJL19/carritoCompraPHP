@@ -31,7 +31,7 @@ class Usuario{
         return $this->email;
     }
     public function getPassword(){
-        return $this->password_hash($this->password,PASSWORD_BCRYPT);
+        return password_hash($this->password,PASSWORD_BCRYPT);
     }
     public function getImagen(){
         return $this->imagen;
@@ -70,7 +70,7 @@ class Usuario{
     }
     //SE GUARDA EL OBJETO 
     public function save(){
-        $sql = "INSERT INTO usuarios VALUES(NULL,'{$this->getNombre()}','{$this->getApellidos()}','{$this->getEmail()}','{$this->getPassword()}','user',NULL);";
+        $sql = "INSERT INTO usuarios VALUES(NULL,'{$this->getNombre()}','{$this->getApellidos()}','{$this->getEmail()}','{$this->getPassword()}','admin',NULL);";
         $guardar= $this->db->query($sql);
         $result = false;
         if($guardar){

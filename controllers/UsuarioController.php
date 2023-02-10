@@ -76,17 +76,24 @@ class usuarioController{
             //SI VERIFY ES TRUE Y ES UN OBJETO , SE CREARA UNA SESSION
             if($verify && is_object($verify)){
                 $_SESSION['usuario']=$verify;
-                      
+                if($_SESSION['usuario']->rol=='admin'){
+                    $_SESSION['rol']='admin';
+                }
+                header('Location:'.base_url);
             }else{
-                echo 'gg';
+                $_SESSION['error-login']='Correo electronico o contraseña incorrecta';
+                header('Location:'.base_url);
             }
+            
         }
-        header('Location:'.base_url);
+        
     }
     public function logout(){
         if(isset($_SESSION['usuario'])){
-            $_SESSION['usuario']=null;
-            unset($_SESSION['usuario']);
+            Utils::deleteSession('usuario');
+        }
+        if(isset($_SESSION['rol'])){
+            Utils::deleteSession('rol');
         }
         header('Location:'.base_url);
     }
