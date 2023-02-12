@@ -16,4 +16,10 @@ class Utils{
             header("Location:".base_url);
         }
     }
+    public static function allCategoria(){
+        require_once 'models/categoria.php';
+        $categoria = new Categoria();
+        $categorias= $categoria->listar();
+        return $categorias;
+    }
 }
