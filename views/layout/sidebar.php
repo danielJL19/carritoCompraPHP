@@ -17,7 +17,7 @@
                             </form>
                             <a href="<?=base_url?>usuario/registro">Registrate Aqui</a>
                             <?php }else{
-                                    echo 'Bienvenido: '. $_SESSION['usuario']->nombre;
+                                    echo '<h2 class="text-center">Bienvenido: '. $_SESSION['usuario']->nombre.'</h2>';
                                 }
                                 ?>
                             <ul class="nav opciones">
@@ -36,7 +36,7 @@
                                         <a href="<?= base_url?>categoria/index" class="nav-link">Gestionar categorias</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link">Gestionar productos</a>
+                                        <a href="<?php base_url .'producto/allProduct'?>" class="nav-link">Gestionar productos</a>
                                     </li>
                                 <?php }?>
                                 <?php if(isset($_SESSION['usuario'])){ ?>
