@@ -36,7 +36,7 @@
                                         <a href="<?= base_url?>categoria/index" class="nav-link">Gestionar categorias</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="<?php base_url .'producto/allProduct'?>" class="nav-link">Gestionar productos</a>
+                                        <a href="<?=base_url?>producto/allProduct" class="nav-link">Gestionar productos</a>
                                     </li>
                                 <?php }?>
                                 <?php if(isset($_SESSION['usuario'])){ ?>

@@ -20,23 +20,31 @@ class Producto{
     }
 
     public function setCategoria_id($categoria_id){
-        $this->categoria_id=$categoria_id;
+        $this->categoria_id=$this->db->real_escape_string($categoria_id);
     }
 
     public function setNombre($nombre){
-        $this->nombre=$nombre;
+        $this->nombre=$this->db->real_escape_string($nombre);
     }
 
     public function setDescripcion($descripcion){
-        $this->id=$descripcion;
+        $this->descripcion=$this->db->real_escape_string($descripcion);
     }
 
     public function setPrecio($precio){
-        $this->precio=$precio;
+        $this->precio=$this->db->real_escape_string($precio);
     }
 
     public function setStock($stock){
-        $this->id=$id;
+        $this->stock=$this->db->real_escape_string($stock);
+    }
+    
+    public function setOferta($oferta){
+        $this->oferta=$this->db->real_escape_string($oferta);
+    }
+
+    public function setImagen($imagen){
+        $this->imagen=$imagen;
     }
 
     public function getId(){
@@ -63,11 +71,42 @@ class Producto{
         return $this->stock;
     }
 
+    public function getOferta(){
+        return $this->oferta;
+    }
+
+    public function getImagen(){
+        return $this->imagen;
+    }
+
     public function listar(){
         //1-COMANDO SQL (SELECT)
         $sql = "SELECT * FROM productos;";
         $result=$this->db->query($sql);// 2-EJECUCION DEL COMANDO SQL (PARAMETRO QUERY) 
 
         return $result;//RESULT TIENE TODOS LOS PRODUCTOS
+    }
+
+    public function save(){
+        //1-COMANDO SQL (INSERT)
+        $sql="INSERT INTO productos VALUES(NULL,'{$this->getCategoria_id()}','{$this->getNombre()}','{$this->getDescripcion()}',{$this->getPrecio()},{$this->getStock()},NULL,CURDATE(), '{$this->getImagen()}');";
+
+        $result=$this->db->query($sql);
+        $verify=false;
+        if($result){
+            $verify=true;
+        }
+        return $verify;
+    }
+
+    public function borrarProducto(){
+        
+        $sql="DELETE FROM productos WHERE id={$this->getId()};";
+        $result=$this->db->query($sql);
+        $resultado=false;
+        if ($result) {//SI SALIO EXITOSO
+            $resultado=true;
+        }
+        return $resultado;
     }
 }

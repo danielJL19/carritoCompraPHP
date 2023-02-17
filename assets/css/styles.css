@@ -26,3 +26,9 @@
     flex-direction:column !important;
     text-align: center;
 }
+.bg-green{
+    background-color: #A7D82E;
+}
+.bg-red{
+    background-color: #AC0C0C !important;
+}
