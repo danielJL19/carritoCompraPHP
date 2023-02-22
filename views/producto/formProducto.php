@@ -56,7 +56,7 @@
 
     <div class="mb-3">
         <?php if(isset($resultadoSave) && $editar): ?>
-             <img src="<?php echo base_url?>uploads/images/<?=$resultadoSave['imagen'];?>" class="imgR">
+             <img src="<?php echo base_url.'uploads/images/'.$resultadoSave['imagen'];?>" class="imgR">
         <?php endif;?>
         
 
