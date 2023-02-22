@@ -80,4 +80,23 @@ class productoController{
         }
         header("Location:".base_url."producto/allProduct");
     }
+
+    public function modificar(){
+        
+        require_once 'models/producto.php';
+      
+        $idObtenido=$_GET['id'];
+        $producto = new Producto();
+        $producto->setId($idObtenido);
+        $resultadoFinal=$producto->ModificarProducto();
+        
+        if ($resultadoFinal) {
+            echo 'Si esta la cuenta';
+            
+        }else{
+            echo 'no esta la cuenta';
+        }
+        
+        require_once 'views/producto/formProducto.php';
+    }
 }

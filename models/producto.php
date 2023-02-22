@@ -109,4 +109,13 @@ class Producto{
         }
         return $resultado;
     }
+
+    public function modificarProducto(){
+        $idObtenido= $this->getId();
+        $resultado=$this->db->query("SELECT * FROM productos WHERE id={$idObtenido}");
+        return $resultado;
+
+
+            
+    }
 }

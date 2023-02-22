@@ -52,6 +52,7 @@ Utils::deleteSession('checkDelete');
                 <td><?php echo $resultado1['fecha'];?></td>
                 <td><?php echo $resultado1['imagen'];?></td>
                 <td><a href="<?=base_url?>producto/delete&id=<?=$resultado1['id'];?>" class="btn btn-danger">Eliminar</a></td>
+                <td><a href="<?=base_url?>producto/modificar&id=<?=$resultado1['id'];?>" class="btn btn-warning">Modificar</a></td>
             </tr>
         <?php endwhile; ?>
 

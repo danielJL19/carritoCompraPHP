@@ -22,4 +22,11 @@ class Utils{
         $categorias= $categoria->listar();
         return $categorias;
     }
+
+    public static function allProductoxId(){
+        require_once 'models/producto.php';
+        $producto = new Producto();
+        $resultado=$producto->listar();
+        return $resultado;
+    }
 }

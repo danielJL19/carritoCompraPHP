@@ -2,6 +2,7 @@
  RewriteEngine on 
  ErrorDocument 404 http://localhost/curso/MVC-MEJORADO/error/index
 
+ RewriteCond %{REQUEST_URI} !\.(css|gif|ico|jpg|js|png|swf|txt)$
  RewriteCond %{SCRIPT_FILENAME} !-d
  RewriteCond %{SCRIPT_FILENAME} !-f
 
